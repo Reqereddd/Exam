@@ -1,0 +1,87 @@
+﻿<Window x:Class="Demo_ex.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo_ex"
+        mc:Ignorable="d"
+        Title="Manager Window" Height="450" Width="1550" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#ecede4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+
+            <TextBlock x:Name="HelloUser" Text="" TextDecorations="Underline" Margin="30,0,0,0" VerticalAlignment="Center" FontFamily="Mangal" Foreground="#474747" FontSize="18"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="4">
+            <DataGrid BorderBrush="#FFACACAC" BorderThickness="1" FontFamily="Mangal" FontSize="13" FontWeight="Normal" Foreground="#474747" AutoGenerateColumns="False" x:Name="Tickets">
+                <DataGrid.Columns>
+                    <DataGridTextColumn CanUserReorder="False" Header="Id" Width="30" Binding="{Binding id_заявки}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Клиент" Width="auto" Binding="{Binding Клиент.Фамилия}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Описание заявки" Width="auto" Binding="{Binding Описание_заявки}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Дата открытия" Width="auto" Binding="{Binding Дата_открытия, StringFormat=dd/MM/yyyy}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Наименование оборудования" Width="auto" Binding="{Binding Оборудование.Наименование_оборудования}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Неисправность" Width="auto" Binding="{Binding Неисправность.Неисправность1}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Стоимость" Width="auto" Binding="{Binding Итоговая_стоимость}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Дата закрытия" Width="auto" Binding="{Binding Дата_закрытия, StringFormat=dd/MM/yyyy}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Приоритет" Width="auto" Binding="{Binding Приоритет1.Приоритет1}"></DataGridTextColumn>
+                    <DataGridTextColumn CanUserReorder="False" Header="Статус" Width="auto" Binding="{Binding Статус.Наименование_статуса}"></DataGridTextColumn>
+                    <DataGridTemplateColumn  Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="ChangeBtn" Background="#919A4A" BorderBrush="Transparent" BorderThickness="0" Content="Подробнее" Click="ChangeBtn_Click" FontFamily="Mangal" FontSize="13" Foreground="#393E46" Grid.Column="0" Width="auto"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Background="#919A4A" Height="50" VerticalAlignment="Top" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Orientation="Horizontal">
+            <StackPanel Margin="20,0,0,0" Orientation="Horizontal" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBox Background="White" Width="390" Foreground="#474747" HorizontalAlignment="Center" x:Name="SearchBar" Text="   Поиск заявки. . ." TextWrapping="NoWrap" FontFamily="Mangal" FontSize="18" TextAlignment="Left" VerticalAlignment="Center" Height="25" GotFocus="SearchBar_GotFocus" TextChanged="SearchBar_TextChanged">
+                </TextBox>
+                <Button Background="White" x:Name="SearchBTN" Height="25" Margin="1,0,0,0" FontFamily="Mangal" FontSize="18" BorderBrush="#FFACACAC" FontWeight="Normal"  Foreground="#474747" VerticalAlignment="Center" HorizontalAlignment="Right" Width="90" Click="BtnSearch_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock HorizontalAlignment="Left" Width="65" Text=" Search"></TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Margin="3,0,0,0" Orientation="Horizontal" Grid.Column="3" Grid.Row="6" Grid.RowSpan="3">
+                <Border BorderThickness="1" Background="White" BorderBrush="#FFACACAC" VerticalAlignment="Center" Height="25">
+                    <TextBlock TextAlignment="Center" Height="25" FontFamily="Mangal" Foreground="#474747" FontSize="18" Width="70" VerticalAlignment="Top">
+                    Фильтр:
+                    </TextBlock>
+                </Border>
+                <ComboBox x:Name="Filter"  Height="25" SelectedIndex="0" FontFamily="Mangal" Foreground="#474747" FontSize="18" Width="290" VerticalAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBoxItem >Статус - Все</ComboBoxItem>
+                    <ComboBoxItem >Статус - В ожидании</ComboBoxItem>
+                    <ComboBoxItem >Статус - В работе</ComboBoxItem>
+                    <ComboBoxItem >Статус - Выполнено</ComboBoxItem>
+
+                </ComboBox>
+            </StackPanel>
+
+        </StackPanel>
+        <Button Background="#919A4A" Grid.Column="1" Grid.Row="8" FontFamily="Mangal" FontSize="30" Width="40" FontWeight="Bold" Foreground="#474747" BorderBrush="#FFACACAC" VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_Click" >
+            ←
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="Demo_ex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo_ex"
+        mc:Ignorable="d"
+        Title="Authorization" Height="510" Width="400" WindowStartupLocation="CenterScreen" >
+    <Grid Background="#ecede4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock  Margin="0,30,0,0" FontFamily="Mangal" TextDecorations="Underline" Text="Техносервис" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontSize="35" VerticalAlignment="Center" FontWeight="Bold" Foreground="#474747" ></TextBlock>
+        <TextBlock Margin="0,15,0,0" FontFamily="Mangal" Text="Authorization" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Foreground="#474747" ></TextBlock>
+        <StackPanel  Grid.Row="1" Grid.Column="2">
+            <TextBlock Margin="5,3,5,5" FontFamily="Mangal" Text="Введите Логин:" FontWeight="bold" FontSize="18" Foreground="#474747" HorizontalAlignment="Left"></TextBlock>
+            <TextBox x:Name="AuthLogin" Background="#ecede4" Margin="5,0,5,5" FontFamily="Mangal" Text="" FontWeight="bold" VerticalAlignment="Center" FontSize="18" Foreground="#474747" BorderBrush="#B1B2AD	" BorderThickness="2"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2">
+            <TextBlock Margin="5,3,5,5" FontFamily="Mangal" Text="Введите Пароль:" FontWeight="bold" FontSize="18" Foreground="#474747" HorizontalAlignment="Left"></TextBlock>
+            <PasswordBox Background="#ecede4" x:Name="AuthPass" Margin="5,0,5,5" FontFamily="Mangal" FontWeight="bold" VerticalAlignment="Center" FontSize="18" Foreground="#474747" BorderBrush="#B1B2AD" BorderThickness="2"></PasswordBox>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="2">
+            <Button x:Name="SignIn" Cursor="Hand" Background="#919A4A" Height="40px" FontWeight="bold"  FontSize="18" Foreground="#474747" BorderBrush="#B1B2AD" BorderThickness="2" FontFamily="Mangal" Click="SignIn_Click">Войти</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="7" Grid.Column="2">
+            <Button x:Name="ToRegistration" Cursor="Hand" Background="Transparent" Height="40px" FontWeight="bold"  FontSize="18" Foreground="#474747" BorderBrush="Transparent" BorderThickness="2" FontFamily="Mangal" Click="ToRegistration_Click">Зарегистрироваться</Button>
+        </StackPanel>
+    </Grid>
+</Window>

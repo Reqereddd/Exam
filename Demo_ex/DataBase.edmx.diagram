@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="34f504aa14014476ac0453d4baf66f54" Name="Diagram1">
+        <EntityTypeShape EntityType="Demo_exModel.Запчасть" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_exModel.Заявка" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_exModel.Клиент" Width="1.5" PointX="3.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_exModel.Неисправность" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_exModel.Оборудование" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_exModel.Приоритет" Width="1.5" PointX="3.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_exModel.Роль" Width="1.5" PointX="1.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_exModel.Сотрудник" Width="1.5" PointX="3.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_exModel.Статус" Width="1.5" PointX="3.75" PointY="20.5" IsExpanded="true" />
+        <AssociationConnector Association="Demo_exModel.FK_Запчасть_Оборудование" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_exModel.FK_Заявка_Клиент" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_exModel.FK_Заявка_Неисправность" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_exModel.FK_Заявка_Оборудование" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_exModel.FK_Заявка_Приоритет" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_exModel.FK_Заявка_Сотрудник" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_exModel.FK_Заявка_Статус" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_exModel.FK_Сотрудник_Роль" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
